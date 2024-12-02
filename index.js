@@ -28,7 +28,7 @@ app.use("/api/whoami", function(req, res, next) {
   res.json( {
     ipaddress: req.ip,
     language: req.acceptsLanguages(),
-    software: Object.keys(req.headers)
+    software: req.headers["user-agent"]
   } );
   next();
 });
